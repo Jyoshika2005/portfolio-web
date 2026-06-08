@@ -32,8 +32,13 @@ function getIcon(type: string) {
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="max-w-6xl mx-auto px-6 py-20">
-      <h2 className="text-4xl font-bold mb-8">Certifications</h2>
+    <section
+      id="certifications"
+      className="max-w-6xl mx-auto px-6 py-20"
+    >
+      <h2 className="text-4xl font-bold mb-8">
+        Certifications
+      </h2>
 
       <div className="grid md:grid-cols-3 gap-6">
         {certifications.map((cert) => (
@@ -58,13 +63,13 @@ export default function Certifications() {
             </p>
 
             <a
-  href={`/certificates/${cert.file}`}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block mt-4 px-4 py-2 bg-blue-600 rounded-xl hover:bg-blue-500"
->
-  View Certificate
-</a>
+              href={import.meta.env.BASE_URL + `certificates/${cert.file}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4 px-4 py-2 bg-blue-600 rounded-xl hover:bg-blue-500 transition"
+            >
+              View Certificate
+            </a>
           </div>
         ))}
       </div>

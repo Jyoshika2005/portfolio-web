@@ -1,21 +1,22 @@
+
 const projects = [
   {
     title: "Breast Cancer Detection System",
-    image: "/projects/breast-cancer.png",
+    image: import.meta.env.BASE_URL + "projects/breast-cancer.png",
     description: "ML model for cancer prediction using Python.",
     tech: ["Python", "Scikit-Learn", "Streamlit"],
     github: "https://github.com/Jyoshika2005/BreastCancer-ML-App"
   },
   {
     title: "Gesture Control System",
-    image: "/projects/gesture-control.png",
+    image: import.meta.env.BASE_URL + "projects/gesture-control.png",
     description: "Control mouse using hand gestures.",
     tech: ["OpenCV", "MediaPipe", "Python"],
     github: "https://github.com/Jyoshika2005/gesture-control-computer-vision"
   },
   {
     title: "Smart Soil System",
-    image: "/projects/smart-soil.png",
+    image: import.meta.env.BASE_URL + "projects/smart-soil.png",
     description: "IoT-based soil monitoring system.",
     tech: ["ESP32", "IoT", "Embedded C"],
     github: "https://github.com/Jyoshika2005/Smart-soil-Management"
@@ -31,7 +32,7 @@ export default function Projects() {
         {projects.map((project) => (
           <div
             key={project.title}
-            className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:scale-105 transition"
+            className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]"
           >
             <img
               src={project.image}
@@ -60,13 +61,13 @@ export default function Projects() {
               </div>
 
               <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-4 text-blue-400 hover:text-blue-300"
-              >
-                View Code →
-              </a>
+  href={project.github}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block mt-4 px-4 py-2 bg-blue-600 rounded-xl hover:bg-blue-500 transition"
+>
+  View Code
+</a>
             </div>
           </div>
         ))}
